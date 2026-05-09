@@ -2,8 +2,9 @@ const express = require('express');
 const mysql = require('mysql2');
 const dotenv = require('dotenv');
 
-dotenv.config();
-
+if (process.env.NODE_ENV !== 'production') {
+    dotenv.config();
+}
 const app = express();
 app.use(express.json());
 
